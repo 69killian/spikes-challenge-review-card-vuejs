@@ -2,6 +2,7 @@
 
 ![Aperçu du projet](spikes-screenshot.png)
 
+![Lien vers le site](https://bienvenue-spikes-challenge.vercel.app/)
 
 # Challenge Spikes - Cartes en Animation Défilante
 
