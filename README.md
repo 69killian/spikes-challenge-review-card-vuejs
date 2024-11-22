@@ -1,4 +1,77 @@
-# Bienvenue sur Spikes ! 👋
+
+# (ENG) Welcome to Spikes! 👋
+
+![Project Preview](spikes-screenshot.png)
+
+![Link to Website](https://bienvenue-spikes-challenge.vercel.app/)
+
+# Spikes Challenge - Scrolling Animated Cards
+
+"Welcome to Spikes" is a project from the Spikes community challenge, where the goal was to create animated cards that scroll over a purple background. This project was designed as a simple exercise to learn how to design **landing page** components while practicing my animation and web design techniques with one of my favorite technologies: **Vue.js**.
+
+## Description
+
+The project consists of creating a set of animated cards that scroll over a purple background. Each card can contain various information (text, images, etc.), and the goal is to make the animation smooth.
+
+## Objectives
+
+- Learn how to design interactive components for landing pages with Vue.js.
+- Implement a smooth and performant card animation with CSS.
+- Use good design and front-end development practices.
+- Create a uniform and pleasant purple background to contrast with the cards.
+
+## Technologies Used
+
+- **Vue.js** for the components
+- **CSS3** for styling
+  
+## Features
+
+- **Card Animation**: The cards move horizontally or vertically in a smooth manner, creating a scrolling effect.
+- **Responsive Components**: The cards are designed to be responsive and adapt to different screen sizes (desktop, tablet, mobile).
+  
+## Installation
+
+1. Clone this repository to your machine:
+    ```bash
+    git clone https://github.com/your-username/spikes-challenge-cards.git
+    ```
+
+2. Install dependencies via npm:
+    ```bash
+    cd spikes-challenge-cards
+    npm install
+    ```
+
+3. Start the application in development mode:
+    ```bash
+    npm run serve
+    ```
+
+4. Open your browser and go to the following URL:
+    ```
+    http://localhost:8080
+    ```
+
+## Usage
+
+- The cards scroll automatically on the page, but you can adjust the animation and effects in the `index.css` file.
+- Modify the contents of the cards (text, images, etc.) as needed in the Vue.js component files.
+
+## Conclusion
+
+This project was a great opportunity to experiment with **Vue.js** and **CSS** to create an interactive and animated interface. Through this challenge, I was able to deepen my front-end and interface design skills.
+
+## Contributions
+
+If you have suggestions to improve this project or ideas for future improvements, feel free to open an *issue* or make a *pull request*.
+<br><br><br><br><br><br><br><br>
+
+
+
+
+
+# (FR) Bienvenue sur Spikes ! 👋
 
 ![Aperçu du projet](spikes-screenshot.png)
 
@@ -65,7 +138,4 @@ Ce projet était une excellente opportunité pour expérimenter avec **Vue.js** 
 
 Si vous avez des suggestions pour améliorer ce projet ou des idées pour de futures améliorations, n'hésitez pas à ouvrir une *issue* ou à faire une *pull request*.
 
-## License
-
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
 
