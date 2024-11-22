@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600;700&display=swap');
+
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #090118; /* Couleur de fond entre les vecteurs */
+}
+
+/* Logo centré */
+.spikes-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    z-index: 1; /* Devant les vecteurs */
+}
+
+/* Top Vector */
+.top-vector {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.top-vector img {
+    width: 100%; 
+    height: auto; /* Conserve les proportions */
+    max-height: 40vh; /* Limite la hauteur de l'image à 40% de la hauteur de la fenêtre */
+}
+
+/* Bottom Vector */
+.bottom-vector {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.bottom-vector img {
+    width: 100%; 
+    height: auto; /* Conserve les proportions */
+    max-height: 40vh; /* Limite la hauteur de l'image à 40% de la hauteur de la fenêtre */
+}
+
+/* L'ellipse occupe toute la fenêtre */
+.ellipse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* L'ellipse est derrière les autres éléments */
+}
+
+.ellipse img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit entièrement l'espace disponible */
+}
+
+/* Marquee Section */
+.marquee-demo {
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+.marquee, .marqueereverse {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    white-space: nowrap;
+    padding: 16px 0;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 16px; 
+    animation: marquee 60s linear infinite;  /* Animation lente */
+}
+
+
+.marque.reverse .marquee-content {
+    animation-direction: reverse;
+    animation: marqueeReverse 60s linear infinite;  /* défilement inversé */
+}
+
+/* Styles de base pour la carte */
+.review-card {
+    display: flex;
+    flex-direction: column;
+    width: 287px;
+    height: 160px;
+    padding: 16px;
+    background-color: #0C0024;  /* Couleur de fond initiale */
+    border-radius: 12px;
+    gap: 16px;
+    font-family: "SF Pro Text", sans-serif;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;  /* Transition de la couleur de fond et de bordure */
+    box-sizing: border-box;
+    
+    /* Dégradé de la bordure */
+    background: #0C0024;  /* Couleur de fond qui ne sera pas affectée par la transition */
+    border: 1px solid transparent;  /* Bordure transparente pour ne pas gêner l'effet */
+    background: linear-gradient(#0C0024, #0C0024) padding-box,
+                linear-gradient(to bottom, #4C3182, #11032C) border-box; /* Dégradé sur les bords */
+}
+
+/* Effet au survol */
+.review-card:hover {
+    background-color: #4C3182;  /*  la couleur de fond au survol */
+    border-color: #6A44A9;  /* Change la couleur de bordure au survol */
+    background: linear-gradient(#100031d1, #1000318a) padding-box,
+                linear-gradient(to bottom, #11032C, #4C3182) border-box;
+}
+
+
+
+
+
+
+
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);  /* Déplacement vers la gauche de toute la largeur du conteneur */
+    }
+}
+
+@keyframes marqueeReverse {
+    0% {
+        transform: translateX(0%);  /* Démarre l'animation au centre */
+    }
+    100% {
+        transform: translateX(100%);  /* Déplace les éléments vers la gauche */
+    }
+}
+
+
+
+
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.review-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.username {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.review-body {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    overflow-wrap: break-word; /* Coupe les mots trop longs */
+    word-wrap: break-word; /* Compatibilité supplémentaire */
+    word-break: break-word; /* Gestion des mots très longs */
+    white-space: normal; /* Permet le retour naturel à la ligne */
+}
+
+
+
+/* Gradient Edges for Visual Effect */
+.marquee-demo::before,
+.marquee-demo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-demo::before {
+    left: 0;
+    background: linear-gradient(to right, #0C0024, transparent);
+}
+
+
+.marquee-demo::after {
+    right: 0;
+    background: linear-gradient(to left, #0C0024, transparent);
+}
+
+
+
+.spikes-button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Devant les vecteurs */
+    position: fixed;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.spikes-button-link button {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.028); /* Couleur de fond avec transparence */
+    backdrop-filter: blur(2px); /* Flou appliqué au fond */
+    border: none; 
+    padding:  4px 20px;
+    border-radius: 16px;
+    border: 1px solid #4C3182;
+    font-size: 16px; 
+    color: white;
+}
+
+.spikes-button-link a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Media Queries pour ajuster la disposition sur différents écrans */
+
+/* Écrans très grands (desktop large) */
+@media (min-width: 1600px) {
+    .marquee-demo {
+        top: 444px;
+    }
+
+    .review-card {
+        width: 300px;
+        max-width: 300px;
+    }
+
+    .marquee-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Pour les écrans 1632x750 */
+@media (max-width: 1632px) and (max-height: 780px) {
+    .marquee-demo {
+        top: 190px !important;
+    }
+}
+
+@media (max-width: 1440px) and (max-height: 800px) {
+    .marquee-demo {
+        top: 190px !important;
+    }
+}
+
+
+/* Écrans plus grands (Desktop standard) */
+@media (min-width: 1200px) {
+    
+
+    .review-card {
+        width: 280px ;
+        max-width: 280px;
+    }
+
+    .marquee-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Écrans moyens (tablettes et petits desktops) */
+@media (max-width: 1200px) {
+    .marquee-demo {
+        top: 100px ;
+    }
+
+    .review-card {
+        width: 260px;
+        max-width: 260px;
+    }
+
+    .marquee-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Écrans moyens (tablettes) */
+@media (max-width: 768px) {
+    .marquee-demo {
+        top: 170px !important; /* Ajustement pour tablettes */
+    }
+
+    .name, .review-body {
+        font-size: 11px;
+    }
+
+
+    .marquee-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spikes-logo {
+        margin-top: 32px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .marquee-demo {
+        top: 50px; /* Ajustement pour mobiles */
+    }
+
+    .review-card {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    .marquee-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spikes-logo {
+        margin-top: 32px;
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 320px) {
+    .marquee-demo {
+        top: 50px; /* Ajustement pour petits mobiles */
+    }
+
+    .review-card {
+        padding: 12px;
+    }
+
+    .marquee-content {
+        gap: 8px; /* Réduire l'espace entre les cartes sur les petits écrans */
+    }
+}
+
+
+/* Style pour bouton */
+.spikes-button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spikes-button-link button {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.028);
+    backdrop-filter: blur(2px);
+    border: none;
+    padding: 4px 20px;
+    border-radius: 16px;
+    border: 1px solid #4C3182;
+    font-size: 16px;
+    color: white;
+}
+
+.spikes-button-link a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
