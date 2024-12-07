@@ -3,7 +3,7 @@
 
 ![Project Preview](spikes-screenshot.png)
 
-![Link to Website](https://bienvenue-spikes-challenge.vercel.app/)
+[![Link to the website]()](https://bienvenue-spikes-challenge.vercel.app/)]
 
 # Spikes Challenge - Scrolling Animated Cards
 
@@ -75,7 +75,7 @@ If you have suggestions to improve this project or ideas for future improvements
 
 ![Aperçu du projet](spikes-screenshot.png)
 
-![Lien vers le site](https://bienvenue-spikes-challenge.vercel.app/)
+[![Lien du site déployé]()](https://bienvenue-spikes-challenge.vercel.app/)
 
 # Challenge Spikes - Cartes en Animation Défilante
 
